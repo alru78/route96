@@ -14,17 +14,23 @@ export const manifest = setupManifest({
   volumes: ['main', 'mysql', 'startos'],
   images: {
     route96: {
+      // voidic/route96:v0.7.0 plus a current CA bundle, see docker/route96.Dockerfile
       source: {
-        dockerTag:
-          'voidic/route96:v0.7.0@sha256:5ab6064f18ca191dd5836487505607122ef3bfeba6e6ccc5b28eef5c604cf4cc',
+        dockerBuild: {
+          workdir: './docker',
+          dockerfile: './docker/route96.Dockerfile',
+        },
       },
       arch: ['x86_64', 'aarch64'],
       emulateMissing: false,
     },
     mariadb: {
+      // mariadb:11.4.13 plus a current CA bundle, see docker/mariadb.Dockerfile
       source: {
-        dockerTag:
-          'mariadb:11.4.13@sha256:250e1609e93c0e6aecf64bfbab2d84d5e89d2481540fe77447ff6c855c3b1873',
+        dockerBuild: {
+          workdir: './docker',
+          dockerfile: './docker/mariadb.Dockerfile',
+        },
       },
       arch: ['x86_64', 'aarch64'],
       emulateMissing: false,

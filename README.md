@@ -8,8 +8,8 @@ End-user setup is in [instructions.md](instructions.md): whitelist a pubkey, bin
 
 | | |
 |---|---|
-| route96 | `voidic/route96:v0.7.0` pinned by multi-arch digest (upstream's latest stable release tag, 2026-04-10) |
-| Database | `mariadb:11.4.13` (LTS) pinned by digest |
+| route96 | `voidic/route96:v0.7.0` pinned by multi-arch digest (upstream's latest stable release tag, 2026-04-10), rebuilt locally from `docker/route96.Dockerfile` only to refresh `ca-certificates` |
+| Database | `mariadb:11.4.13` (LTS) pinned by digest, rebuilt locally from `docker/mariadb.Dockerfile` only to refresh `ca-certificates` |
 | Arches | `x86_64`, `aarch64` |
 
 ## Architecture
